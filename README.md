@@ -55,8 +55,8 @@ npm run dev
 ```
 Open **`http://localhost:5173`** in your browser.
 
-- **Desktop View:** Features an iPhone 16 Pro mockup frame with status bar, dynamic island, and 1-tap role switcher.
-- **Mobile View / Fullscreen:** Toggle the "Phone Frame" button in the top bar to preview in full-screen or on your mobile device.
+- **Responsive Web & Mobile Layout:** Clean edge-to-edge mobile presentation with notch & gesture bar safe area support, centered cleanly on desktop viewports.
+- **Production Hosting Ready:** No simulated frames or mockups — built directly for hosting (Vercel, Netlify, Render, Cloudflare) and Capacitor Android APK generation.
 
 ### 2. Test on a Physical Smartphone (Same Wi-Fi)
 1. Run `npm run dev`.

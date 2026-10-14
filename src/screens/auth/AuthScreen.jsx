@@ -103,7 +103,7 @@ export default function AuthScreen() {
   };
 
   return (
-    <div className="flex-1 bg-[#F8FAFC] text-gray-900 flex flex-col p-5 overflow-y-auto no-scrollbar font-sans">
+    <div className="flex-1 bg-[#F8FAFC] text-gray-900 flex flex-col p-5 safe-top safe-bottom overflow-y-auto no-scrollbar font-sans">
       {/* Brand Header */}
       <div className="text-center my-3 space-y-2">
         <div className="inline-flex w-12 h-12 rounded-xl bg-busly-primary text-slate-900 items-center justify-center font-black text-2xl shadow-sm">

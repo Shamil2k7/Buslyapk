@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { MobileAuthProvider, useMobileAuth } from './context/MobileAuthContext';
-import DeviceFrame from './components/common/DeviceFrame';
 import TopBar from './components/common/TopBar';
 import BottomNav from './components/common/BottomNav';
 import Toast from './components/common/Toast';
@@ -34,10 +33,12 @@ function MobileAppContent() {
   // If unauthenticated, show AuthScreen
   if (!user) {
     return (
-      <DeviceFrame>
-        <Toast />
-        <AuthScreen />
-      </DeviceFrame>
+      <div className="min-h-screen w-full bg-[#F8FAFC] flex justify-center">
+        <main className="w-full max-w-md min-h-screen h-[100dvh] bg-[#F8FAFC] flex flex-col relative overflow-hidden shadow-xl md:border-x md:border-gray-200">
+          <Toast />
+          <AuthScreen />
+        </main>
+      </div>
     );
   }
 
@@ -95,59 +96,61 @@ function MobileAppContent() {
   };
 
   return (
-    <DeviceFrame>
-      <Toast />
+    <div className="min-h-screen w-full bg-[#F8FAFC] flex justify-center">
+      <main className="w-full max-w-md min-h-screen h-[100dvh] bg-[#F8FAFC] flex flex-col relative overflow-hidden shadow-xl md:border-x md:border-gray-200">
+        <Toast />
 
-      {/* Top Header */}
-      <TopBar
-        title={
-          role === 'PARENT'
-            ? `Family ${user.familyCode || 'FAM'}`
-            : role === 'TEACHER'
-            ? user.name
-            : `${user.assignedBus?.busNumber || 'BUS 01'}`
-        }
-        subtitle={
-          role === 'PARENT'
-            ? user.schoolName
-            : role === 'TEACHER'
-            ? `Class ${user.assignedClasses || '10'}`
-            : `Driver ${user.name}`
-        }
-        onOpenRoleModal={() => setIsRoleModalOpen(true)}
-      />
+        {/* Top Header */}
+        <TopBar
+          title={
+            role === 'PARENT'
+              ? `Family ${user.familyCode || 'FAM'}`
+              : role === 'TEACHER'
+              ? user.name
+              : `${user.assignedBus?.busNumber || 'BUS 01'}`
+          }
+          subtitle={
+            role === 'PARENT'
+              ? user.schoolName
+              : role === 'TEACHER'
+              ? `Class ${user.assignedClasses || '10'}`
+              : `Driver ${user.name}`
+          }
+          onOpenRoleModal={() => setIsRoleModalOpen(true)}
+        />
 
-      {/* Active Screen Content */}
-      <div className="flex-1 flex flex-col min-h-0 bg-[#F8FAFC] overflow-hidden">
-        {renderRoleScreen()}
-      </div>
+        {/* Active Screen Content */}
+        <div className="flex-1 flex flex-col min-h-0 bg-[#F8FAFC] overflow-hidden">
+          {renderRoleScreen()}
+        </div>
 
-      {/* Bottom Navigation */}
-      <BottomNav
-        activeTab={activeTab}
-        onSelectTab={(tab) => setActiveTab(tab)}
-        onOpenAddStudent={() => setIsAddStudentOpen(true)}
-        onOpenSos={() => setIsSosOpen(true)}
-      />
+        {/* Bottom Navigation */}
+        <BottomNav
+          activeTab={activeTab}
+          onSelectTab={(tab) => setActiveTab(tab)}
+          onOpenAddStudent={() => setIsAddStudentOpen(true)}
+          onOpenSos={() => setIsSosOpen(true)}
+        />
 
-      {/* Role Switcher Modal */}
-      <RoleSwitcherModal
-        isOpen={isRoleModalOpen}
-        onClose={() => setIsRoleModalOpen(false)}
-      />
+        {/* Role Switcher Modal */}
+        <RoleSwitcherModal
+          isOpen={isRoleModalOpen}
+          onClose={() => setIsRoleModalOpen(false)}
+        />
 
-      {/* Teacher Add Student Enrollment Modal */}
-      <TeacherAddStudentModal
-        isOpen={isAddStudentOpen}
-        onClose={() => setIsAddStudentOpen(false)}
-      />
+        {/* Teacher Add Student Enrollment Modal */}
+        <TeacherAddStudentModal
+          isOpen={isAddStudentOpen}
+          onClose={() => setIsAddStudentOpen(false)}
+        />
 
-      {/* Driver SOS Emergency Modal */}
-      <DriverSosModal
-        isOpen={isSosOpen}
-        onClose={() => setIsSosOpen(false)}
-      />
-    </DeviceFrame>
+        {/* Driver SOS Emergency Modal */}
+        <DriverSosModal
+          isOpen={isSosOpen}
+          onClose={() => setIsSosOpen(false)}
+        />
+      </main>
+    </div>
   );
 }
 

@@ -20,7 +20,7 @@ export default function TopBar({ title, subtitle, onOpenRoleModal, rightAction }
   const badge = getRoleBadge(user?.role);
 
   return (
-    <header className="sticky top-0 z-30 bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between shadow-sm shrink-0">
+    <header className="sticky top-0 z-30 bg-white border-b border-gray-200 px-4 pb-3 safe-top flex items-center justify-between shadow-sm shrink-0">
       <div className="flex items-center space-x-2.5">
         <div className="w-8 h-8 rounded-lg bg-busly-primary text-slate-900 flex items-center justify-center font-bold shadow-sm">
           <Bus className="w-4 h-4 fill-current" />

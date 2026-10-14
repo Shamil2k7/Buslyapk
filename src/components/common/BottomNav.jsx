@@ -19,7 +19,7 @@ export default function BottomNav({ activeTab, onSelectTab, onOpenAddStudent, on
 
   if (role === 'PARENT') {
     return (
-      <nav className="w-full bg-white border-t border-gray-200 px-3 py-1 flex items-center justify-around shrink-0 z-40 shadow-[0_-2px_10px_rgba(0,0,0,0.03)]">
+      <nav className="w-full bg-white border-t border-gray-200 px-3 pt-1 safe-bottom flex items-center justify-around shrink-0 z-40 shadow-[0_-2px_10px_rgba(0,0,0,0.03)]">
         <button
           onClick={() => onSelectTab('home')}
           className={`flex flex-col items-center py-1.5 px-3 rounded-lg transition-colors active:scale-95 ${
@@ -65,7 +65,7 @@ export default function BottomNav({ activeTab, onSelectTab, onOpenAddStudent, on
 
   if (role === 'TEACHER') {
     return (
-      <nav className="w-full bg-white border-t border-gray-200 px-3 py-1 flex items-center justify-around shrink-0 z-40 shadow-[0_-2px_10px_rgba(0,0,0,0.03)]">
+      <nav className="w-full bg-white border-t border-gray-200 px-3 pt-1 safe-bottom flex items-center justify-around shrink-0 z-40 shadow-[0_-2px_10px_rgba(0,0,0,0.03)]">
         <button
           onClick={() => onSelectTab('home')}
           className={`flex flex-col items-center py-1.5 px-3 rounded-lg transition-colors active:scale-95 ${
@@ -112,7 +112,7 @@ export default function BottomNav({ activeTab, onSelectTab, onOpenAddStudent, on
 
   if (role === 'DRIVER') {
     return (
-      <nav className="w-full bg-white border-t border-gray-200 px-3 py-1 flex items-center justify-around shrink-0 z-40 shadow-[0_-2px_10px_rgba(0,0,0,0.03)]">
+      <nav className="w-full bg-white border-t border-gray-200 px-3 pt-1 safe-bottom flex items-center justify-around shrink-0 z-40 shadow-[0_-2px_10px_rgba(0,0,0,0.03)]">
         <button
           onClick={() => onSelectTab('cockpit')}
           className={`flex flex-col items-center py-1.5 px-4 rounded-lg transition-colors active:scale-95 ${
